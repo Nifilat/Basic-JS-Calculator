@@ -6,17 +6,20 @@ function Calculator() {
 
   let result;
 
-  if (OPERATOR == "+") {
-    result = num1 + numb2;
-  } else if (OPERATOR == "-") {
-    result = num1 - numb2;
-  } else if (OPERATOR == "*") {
-    result = num1 * numb2;
+  if (isNaN(num1) || isNaN(numb2)) {
+    alert("This is not a number, refresh the page and try again");
   } else {
-    result = num1 / numb2;
+    if (OPERATOR == "+") {
+      result = num1 + numb2;
+    } else if (OPERATOR == "-") {
+      result = num1 - numb2;
+    } else if (OPERATOR == "*") {
+      result = num1 * numb2;
+    } else {
+      result = num1 / numb2;
+    }
+    alert(`${num1} ${OPERATOR} ${numb2} = ${result}`);
   }
-
-  alert(`${num1} ${OPERATOR} ${numb2} = ${result}`);
 }
 
 Calculator();
